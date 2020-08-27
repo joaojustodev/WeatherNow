@@ -10,7 +10,7 @@
 
 <h3 align="center">
   <img alt="weatherApp" 
-    src="./src/assets/screenshot.png?raw=true" >
+    src="./src/assets/screenshot.png?raw=true" width="180px" >
 </h3>
 
 ## ✅ Features
