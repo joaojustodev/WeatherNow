@@ -19,10 +19,10 @@
 
 ## 🧰 Tools
 
-- [React](https://reactnative.dev/)
-- [React-Redux](https://docs.expo.io/)
-- [Redux](https://www.typescriptlang.org/)
-- [Open wweather map API](https://openweathermap.org/)
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [React-Redux](https://redux.js.org/basics/usage-with-react)
+- [Open weather map API](https://openweathermap.org/)
 
 ## 🙋‍♂️ Author
 
