@@ -1,22 +1,21 @@
-import React from 'react';
-import {GlobalStyles} from './styles/globalStyles'
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./store";
+import { GlobalStyles } from "./styles/globalStyles";
 
-import Header from "./components/Header"
-import WeatherCard from "./components/WeatherCard"
+import Header from "./components/Header";
+import WeatherCard from "./components/WeatherCard";
 
 function App() {
-  
-
   return (
-  	<>
-	    <div className="App">
-	      <Header />
-	      <WeatherCard/>
-	    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <WeatherCard />
+      </div>
 
-	    
-	    <GlobalStyles/>
-	</>  
+      <GlobalStyles />
+    </Provider>
   );
 }
 

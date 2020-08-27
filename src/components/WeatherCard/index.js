@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { weatherActions } from "../../store/ducks/weather";
 import api from "../../services/api";
 
 import WeatherConditionImg from "../WeatherConditionImg";
@@ -6,26 +8,23 @@ import LoadingWeatherCard from "../Shimmer/LoadingWeatherCard";
 import Data from "../Date";
 import * as S from "./styles";
 
-const WeatherCard = () => {
+const WeatherCard = ({ props, dispatch }) => {
+  const { loading, success, failure } = props.weatherReducer;
+
   const [query, setQuery] = useState();
   const [weather, setWeather] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
 
   function handleChange(e) {
     setQuery(e.target.value.toLowerCase());
   }
 
   async function handleClick() {
-    setLoading(true);
-    setError(false);
     try {
       const response = await fetch(
         `${api.url}q=${query}&appid=${api.key}&units=metric&lang=pt`
       );
 
       if (response.status !== 200) {
-        setError(true);
         return null;
       }
 
@@ -47,11 +46,7 @@ const WeatherCard = () => {
           },
         ]);
       }
-    } catch (err) {
-      if (err) setError(true);
-    } finally {
-      setLoading(false);
-    }
+    } catch (err) {}
   }
 
   return (
@@ -63,7 +58,7 @@ const WeatherCard = () => {
         </S.Button>
       </S.Container>
       <S.WeatherCard>
-        {error ? (
+        {failure ? (
           <S.ErrorMessage>Cidade não encontrada!</S.ErrorMessage>
         ) : loading ? (
           <LoadingWeatherCard />
@@ -91,4 +86,8 @@ const WeatherCard = () => {
   );
 };
 
-export default WeatherCard;
+export const mapStateToProps = (state) => ({
+  props: state,
+});
+
+export default connect(mapStateToProps)(WeatherCard);
