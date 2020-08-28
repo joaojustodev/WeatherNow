@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-import  {colors} from '../../utils/variables';
-
+import styled from "styled-components";
 
 export const Container = styled.div`
 
@@ -13,6 +11,5 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-	padding:20px;
-
-` ;
+  padding: 20px;
+`;
