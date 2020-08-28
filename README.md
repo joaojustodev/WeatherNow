@@ -22,6 +22,7 @@
 - [React](https://reactjs.org/)
 - [Redux](https://redux.js.org/)
 - [React-Redux](https://redux.js.org/basics/usage-with-react)
+- [Redux-Thunk](https://github.com/reduxjs/redux-thunk)
 - [Open weather map API](https://openweathermap.org/)
 
 ## 🙋‍♂️ Author
